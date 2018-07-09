@@ -9,11 +9,12 @@ sudo docker build -t clang-6.0 clang-6.0/
 
 ## Пример использования.
 ```
-sudo docker run -v <path_to_project>:/home/builder/boost -v <path_to_bin_files>:/home/builder/bin clang-6.0 -C -M tests
+sudo docker run -v <path_to_boost>:/home/builder/boost -v <path_to_boost_cmake>:/home/builder/project -v <path_to_build_directory>:/home/builder/bin clang-6.0 -C -M tests
 ```
 ## Доступные ключи.
 ```
 -C for run cmake
 -M for run make with $target
 -D for clear cache
+-T for run ctest wit $target
 ```
