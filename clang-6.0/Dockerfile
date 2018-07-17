@@ -19,9 +19,10 @@ RUN apt-get -qq update
 RUN apt-get -qq upgrade
 
 RUN apt-get install -y zlib1g-dev libbz2-dev mpich
-RUN apt-get install -y python3-dev python3-pip python3-tk python3-lxml python3-six
+RUN apt-get install -y python-dev python-pip python-tk python-lxml python-six
 RUN apt-get install -y libssl-dev #for OPpenSSl
 RUN apt-get install -y libicu-dev # for ICU
+RUN apt-get install -y libiconv-dev # for iconv
 
 ENV CC="/usr/lib/llvm-6.0/bin/clang" \
     CXX="/usr/lib/llvm-6.0/bin/clang++" \
