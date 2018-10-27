@@ -13,6 +13,9 @@ RUN apt-get install -y python-dev python-pip python-tk python-lxml python-six
 RUN apt-get install -y libssl-dev #for OPpenSSl
 RUN apt-get install -y libicu-dev # for ICU
 RUN apt-get install -y libiconv-dev # for iconv
+RUN apt-get install -y libgmp-dev
+RUN apt-get install -y libntl-dev
+RUN apt-get install -y libgmp3-dev
 
 ENV CC="/usr/bin/gcc-8" \
     CXX="/usr/bin/g++-8" \
