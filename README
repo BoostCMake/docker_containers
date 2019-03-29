@@ -1,20 +1,19 @@
-### Данные файлы используются для сборки под различными версиями компилятора.
+# Boost CMake Build Tools
 
-## Сборка.
+## Building.
 ```
 cd <path>
-sudo docker build -t base base/
-sudo docker build -t clang-6.0 clang-6.0/
+docker build -t base base/
+docker build -t clang-6.0 clang-6.0/
 ```
 
-## Пример использования.
+## Examples.
 ```
-sudo docker run -v <path_to_boost>:/home/builder/boost -v <path_to_boost_cmake>:/home/builder/project -v <path_to_build_directory>:/home/builder/bin clang-6.0 -C -M tests
+docker run -v <path_to_boost>:/home/builder/boost -v <path_to_boost_cmake>:/home/builder/project -v <path_to_build_directory>:/home/builder/bin clang-6.0 -C -M tests
 ```
-## Доступные ключи.
-```
--C for run cmake
--M for run make with $target
--D for clear cache
--T for run ctest wit $target
-```
+## Command Line Arguments.
+
+```-C``` - Simply runs CMake
+```-M <target>``` - Runs ```make``` with target
+```-D``` - Clears caches
+```-T``` - Runs ```ctest``` with target
